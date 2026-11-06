@@ -18,10 +18,10 @@ function Navbar() {
       name: "Experience",
       path: "/experience",
     },
-    {
-      name: "Case Studies",
-      path: "/case-studies",
-    },
+    // {
+    //   name: "Case Studies",
+    //   path: "/case-studies",
+    // },
     {
       name: "Expertise",
       path: "/expertise",
@@ -47,7 +47,7 @@ function Navbar() {
           {/* LOGO */}
 
           <Link to="/" className="text-2xl font-black italic">
-            <img src="/lgooweb.jpeg" alt="" className="h-15 w-auto" />
+            <img src="/logo.png" alt="" className="h-15 w-auto" />
           </Link>
 
           {/* DESKTOP NAV */}

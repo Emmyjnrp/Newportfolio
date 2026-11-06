@@ -1,74 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { projects } from "../data/projects";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Sales Growth Strategy",
-      category: "Business Development",
-      description:
-        "Developed a sales strategy that improved lead generation, customer acquisition, and overall sales performance.",
-      image:
-        "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
-      tags: ["Sales Strategy", "CRM", "Lead Generation"],
-      result: "+35% Sales Growth",
-    },
-
-    {
-      title: "CRM Optimization",
-      category: "CRM Strategy",
-      description:
-        "Streamlined the customer management process and created a more efficient sales pipeline.",
-      image:
-        "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
-      tags: ["CRM", "Automation", "Pipeline"],
-      result: "40% More Efficiency",
-    },
-
-    {
-      title: "Lead Generation Campaign",
-      category: "Lead Generation",
-      description:
-        "Created and executed a targeted lead generation campaign focused on high-quality prospects.",
-      image:
-        "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80",
-      tags: ["Prospecting", "Outreach", "B2B"],
-      result: "500+ Qualified Leads",
-    },
-
-    {
-      title: "Strategic Partnership",
-      category: "Partnerships",
-      description:
-        "Built a strategic partnership that opened new business opportunities and expanded market reach.",
-      image:
-        "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80",
-      tags: ["Partnerships", "Strategy", "Growth"],
-      result: "3 New Partnerships",
-    },
-
-    {
-      title: "Market Research",
-      category: "Market Intelligence",
-      description:
-        "Conducted market research to identify customer needs, competitors, and new growth opportunities.",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-      tags: ["Research", "Analytics", "Strategy"],
-      result: "New Market Opportunity",
-    },
-
-    {
-      title: "Client Acquisition",
-      category: "Business Development",
-      description:
-        "Designed an acquisition process focused on converting prospects into long-term clients.",
-      image:
-        "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=80",
-      tags: ["Acquisition", "Sales", "Conversion"],
-      result: "+28% Conversion",
-    },
-  ];
-
   return (
     <section className="min-h-screen bg-[#020d20] px-5 py-8 text-white md:px-10">
       <div className="mx-auto max-w-6xl">
@@ -119,39 +53,25 @@ const Projects = () => {
                 hover:shadow-cyan-950/30
               "
             >
-              {/* Project Image */}
-
-              <div className="relative h-44 overflow-hidden">
+              <Link
+                to={`/projects/${project.id}`}
+                className="relative block h-44 overflow-hidden"
+              >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="
-                    h-full
-                    w-full
-                    object-cover
-                    transition
-                    duration-500
-                    group-hover:scale-105
-                  "
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
 
-                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07182e] via-transparent to-transparent" />
 
-                <div
-                  className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-t
-                    from-[#07182e]
-                    via-transparent
-                    to-transparent
-                  "
-                />
+                <span className="absolute bottom-3 right-3 rounded-md bg-cyan-500 px-3 py-1 text-xs font-semibold text-white">
+                  View Proof →
+                </span>
+              </Link>
 
-                {/* Category */}
-
-                <div
-                  className="
+              <div
+                className="
                     absolute
                     left-4
                     top-4
@@ -165,9 +85,8 @@ const Projects = () => {
                     text-cyan-400
                     backdrop-blur
                   "
-                >
-                  {project.category}
-                </div>
+              >
+                {project.category}
               </div>
 
               {/* Project Content */}
