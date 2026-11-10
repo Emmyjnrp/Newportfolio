@@ -7,7 +7,7 @@ function Footer() {
         <div className="grid md:grid-cols-3 gap-10">
           <div>
             <NavLink to="/" className="text-2xl font-black italic">
-              <img src="/lgooweb.jpeg" alt="" className="h-15 w-auto" />
+              <img src="/logo.png" alt="" className="h-15 w-auto" />
             </NavLink>
 
             <p className="text-slate-400 text-xs leading-6 mt-4 max-w-xs">
@@ -32,13 +32,6 @@ function Footer() {
                 className="block text-xs text-slate-400 hover:text-white"
               >
                 Experience
-              </NavLink>
-
-              <NavLink
-                to="/case-studies"
-                className="block text-xs text-slate-400 hover:text-white"
-              >
-                Case Studies
               </NavLink>
 
               <NavLink

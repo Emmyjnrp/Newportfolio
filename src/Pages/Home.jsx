@@ -6,299 +6,375 @@ import {
   Building2,
   ArrowRight,
   Check,
+  TrendingUp,
+  Target,
+  BarChart3,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
+  const achievements = [
+    {
+      number: "$200K+",
+      title: "Revenue Generated",
+      description: "Through inbound & outbound efforts",
+    },
+    {
+      number: "6+",
+      title: "Qualified Meetings",
+      description: "With senior decision-makers / Month",
+    },
+    {
+      number: "80+",
+      title: "Cold Calls",
+      description: "Made Weekly",
+    },
+    {
+      number: "80+",
+      title: "Targeted Emails",
+      description: "Sent Weekly",
+    },
+  ];
+
+  const services = [
+    {
+      icon: BriefcaseBusiness,
+      title: "Business Development",
+      description:
+        "Identifying growth opportunities, building sales pipelines and developing strategies that drive sustainable revenue.",
+    },
+    {
+      icon: Network,
+      title: "Strategic Partnerships",
+      description:
+        "Building valuable business relationships, developing partner channels and creating long-term commercial opportunities.",
+    },
+    {
+      icon: Users,
+      title: "Sales & Client Acquisition",
+      description:
+        "Connecting with decision-makers, generating qualified leads and converting prospects into lasting business relationships.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Sales Strategy & Enablement",
+      description:
+        "Developing sales playbooks, training teams and improving outreach performance through structured sales processes.",
+    },
+    {
+      icon: Target,
+      title: "Performance Coaching",
+      description:
+        "Identifying sales performance gaps and developing practical strategies to improve team productivity and results.",
+    },
+    {
+      icon: BarChart3,
+      title: "Pipeline Management",
+      description:
+        "Managing commercial pipelines, tracking opportunities and building repeatable systems for predictable business growth.",
+    },
+  ];
+
+  const careers = [
+    {
+      period: "AUG 2026 — PRESENT",
+      role: "Global Sales Capability & Performance Consultant",
+      company: "Hinckley Group Africa",
+    },
+    {
+      period: "AUG 2026 — PRESENT",
+      role: "Business Development Manager",
+      company: "CamDesk Business Services",
+    },
+    {
+      period: "MAY 2025 — PRESENT",
+      role: "Founding Senior Business Development Manager",
+      company: "Growth-Stage Technology Company",
+    },
+  ];
+
   return (
-    <section className="relative overflow-hidden bg-[#030914] px-6 py-16 text-white">
-      {/* Background Glow */}
-      <div className="absolute right-0 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blue-600 opacity-20 blur-[120px]" />
+    <main className="bg-[#030914] text-white">
+      {/* HERO SECTION */}
+      <section className="relative overflow-hidden px-6 py-20 md:py-28">
+        <div className="absolute right-0 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blue-600 opacity-20 blur-[120px]" />
 
-      {/* Main Container */}
-      <div className="relative z-10 mx-auto max-w-7xl">
-        {/* Hero */}
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* LEFT SIDE */}
-          <div>
-            <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-blue-400">
-              Business Development • Sales • Strategic Growth
-            </p>
-
-            <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-              Building Relationships.
-              <br />
-              Creating Opportunities.
-              <br />
-              Driving <span className="text-blue-500">Growth.</span>
-            </h1>
-
-            <p className="mb-8 max-w-xl text-base leading-relaxed text-gray-400 md:text-lg">
-              I help businesses unlock new opportunities, build strategic
-              partnerships, and drive revenue through smart execution and
-              meaningful relationships.
-            </p>
-
-            {/* BUTTONS */}
-            <div className="flex flex-wrap gap-4">
-              <button className="rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium shadow-lg shadow-blue-600/30 transition hover:bg-blue-700">
-                View My Experience
-              </button>
-
-              <button className="rounded-lg border border-blue-500/40 bg-blue-950/30 px-6 py-3 text-sm font-medium transition hover:border-blue-400">
-                Let's Connect
-              </button>
-            </div>
-          </div>
-
-          {/* RIGHT SIDE */}
-          <div className="relative flex justify-center lg:justify-end">
-            {/* Image Glow */}
-            <div className="absolute top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-blue-600 opacity-50 blur-3xl sm:h-96 sm:w-96" />
-
-            {/* Profile Image */}
-            <img
-              src="/workp.jpeg"
-              alt="Professional Headshot"
-              className="relative z-10 w-full bg-indigo-950 rounded-full max-w-md object-cover"
-            />
-          </div>
-        </div>
-
-        {/* STATISTICS */}
-        <div className="mt-16 grid grid-cols-2 gap-6 rounded-2xl border border-blue-900/40 bg-[#09152e]/80 p-6 backdrop-blur-md md:p-8 lg:grid-cols-4">
-          {/* STAT 1 */}
-          <div className="space-y-2 p-3">
-            <h2 className="text-3xl font-bold text-blue-400 md:text-4xl">
-              $20K+
-            </h2>
-
-            <p className="font-medium text-white">Revenue Generated</p>
-
-            <p className="text-xs text-gray-400">
-              Through inbound & outbound efforts
-            </p>
-          </div>
-
-          {/* STAT 2 */}
-          <div className="space-y-2 border-t border-blue-900/40 p-3 md:border-t-0 lg:border-l lg:pl-8">
-            <h2 className="text-3xl font-bold text-blue-400 md:text-4xl">4+</h2>
-
-            <p className="font-medium text-white">Qualified Meetings</p>
-
-            <p className="text-xs text-gray-400">
-              With senior decision-makers / Month
-            </p>
-          </div>
-
-          {/* STAT 3 */}
-          <div className="space-y-2 border-t border-blue-900/40 p-3 md:border-t-0 lg:border-l lg:pl-8">
-            <h2 className="text-3xl font-bold text-blue-400 md:text-4xl">
-              50+
-            </h2>
-
-            <p className="font-medium text-white">Cold Calls</p>
-
-            <p className="text-xs text-gray-400">Made Weekly</p>
-          </div>
-
-          {/* STAT 4 */}
-          <div className="space-y-2 border-t border-blue-900/40 p-3 md:border-t-0 lg:border-l lg:pl-8">
-            <h2 className="text-3xl font-bold text-blue-400 md:text-4xl">
-              50+
-            </h2>
-
-            <p className="font-medium text-white">Targeted Emails</p>
-
-            <p className="text-xs text-gray-400">Sent Weekly</p>
-          </div>
-        </div>
-        <section className="bg-white">
-          {/* ================= WHAT I DO ================= */}
-          <div className="mx-auto max-w-7xl px-6 py-16">
-            {/* Heading */}
-            <div className="mb-10 text-center">
-              <h2 className="text-3xl font-bold text-gray-900">What I Do</h2>
-
-              <p className="mx-auto mt-3 max-w-xl text-sm text-gray-500">
-                I partner with organizations to accelerate growth and build
-                sustainable business value.
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="grid items-center gap-14 lg:grid-cols-2">
+            {/* LEFT CONTENT */}
+            <div>
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-blue-400">
+                Business Development • Sales • Strategic Growth
               </p>
+
+              <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+                Driving Business Growth.
+                <br />
+                Building <span className="text-blue-500">Partnerships.</span>
+                <br />
+                Delivering Results.
+              </h1>
+
+              <p className="mt-7 max-w-xl text-base leading-8 text-gray-400 md:text-lg">
+                I help organizations accelerate growth through strategic
+                business development, revenue generation, sales enablement and
+                meaningful client relationships.
+              </p>
+
+              <p className="mt-5 text-sm font-medium text-gray-300">
+                Business Development Manager | Sales Strategist | Growth &
+                Partnerships Consultant
+              </p>
+
+              <div className="mt-9 flex flex-wrap gap-4">
+                <Link
+                  to="/experience"
+                  className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 text-sm font-semibold shadow-lg shadow-blue-600/20 transition hover:bg-blue-700"
+                >
+                  View My Experience
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+
+                <Link
+                  to="/contact"
+                  className="rounded-lg border border-blue-500/40 bg-blue-950/30 px-6 py-3.5 text-sm font-semibold transition hover:border-blue-400 hover:bg-blue-950/60"
+                >
+                  Let's Connect
+                </Link>
+              </div>
             </div>
 
-            {/* Cards */}
-            <div className="grid gap-6 md:grid-cols-3">
-              {/* Card 1 */}
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                <BriefcaseBusiness className="mb-8 h-8 w-8 text-blue-500" />
+            {/* RIGHT IMAGE */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="absolute top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-blue-600 opacity-40 blur-3xl sm:h-96 sm:w-96" />
 
-                <h3 className="mb-3 font-semibold text-gray-900">
-                  Business Development
-                </h3>
-
-                <p className="text-sm leading-relaxed text-gray-500">
-                  Identify opportunities, build pipelines, and drive revenue
-                  growth.
-                </p>
-              </div>
-
-              {/* Card 2 */}
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                <Network className="mb-8 h-8 w-8 text-purple-500" />
-
-                <h3 className="mb-3 font-semibold text-gray-900">
-                  Strategic Partnerships
-                </h3>
-
-                <p className="text-sm leading-relaxed text-gray-500">
-                  Build and nurture strategic partnerships that create long-term
-                  value.
-                </p>
-              </div>
-
-              {/* Card 3 */}
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                <Users className="mb-8 h-8 w-8 text-blue-500" />
-
-                <h3 className="mb-3 font-semibold text-gray-900">
-                  Sales & Client Acquisition
-                </h3>
-
-                <p className="text-sm leading-relaxed text-gray-500">
-                  Connect with decision-makers and convert relationships into
-                  business.
-                </p>
+              <div className="relative z-10 rounded-full border border-blue-500/30 bg-[#081321] p-3 shadow-2xl shadow-blue-900/30">
+                <img
+                  src="/workp.jpeg"
+                  alt="Professional Headshot"
+                  className="h-[300px] w-[300px] rounded-full object-cover sm:h-[380px] sm:w-[380px] lg:h-[420px] lg:w-[420px]"
+                />
               </div>
             </div>
           </div>
 
-          {/* ================= FEATURED IMPACT ================= */}
-          <div className="bg-[#020d22] px-6 py-10 text-white">
-            <div className="mx-auto max-w-7xl">
-              <h2 className="mb-6 text-xl font-semibold">Featured Impact</h2>
+          {/* STATISTICS */}
+          <div className="mt-20 grid grid-cols-2 gap-4 rounded-2xl border border-blue-900/40 bg-[#09152e]/80 p-5 backdrop-blur-md md:grid-cols-4 md:p-8">
+            {achievements.map((item, index) => (
+              <div
+                key={index}
+                className={`space-y-3 p-3 ${
+                  index !== 0 ? "border-l border-blue-900/40 pl-5" : ""
+                }`}
+              >
+                <h2 className="text-3xl font-bold text-blue-400 md:text-4xl">
+                  {item.number}
+                </h2>
 
-              {/* Featured Project */}
-              <div className="grid gap-6 rounded-xl md:grid-cols-3">
-                {/* Left */}
-                <div className="rounded-xl bg-[#071936] p-6 md:col-span-2">
-                  <div className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-900">
-                      <Building2 className="h-5 w-5 text-blue-400" />
-                    </div>
+                <p className="text-sm font-semibold text-white">{item.title}</p>
 
-                    <div>
-                      <h3 className="font-semibold">
-                        Building a Business Development
-                        <br />
-                        Operation From the Ground Up
-                      </h3>
+                <p className="text-xs leading-6 text-gray-400">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                      <p className="mt-3 text-sm leading-relaxed text-gray-400">
-                        Designed and executed a comprehensive strategy that
-                        positioned the company for sustainable growth.
-                      </p>
+      {/* WHAT I DO */}
+      <section className="bg-white px-6 py-20 text-gray-900">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <p className="text-xs font-bold tracking-[0.3em] text-blue-600">
+              MY EXPERTISE
+            </p>
 
-                      {/* Checklist */}
-                      <div className="mt-4 space-y-2 text-sm text-gray-300">
-                        <p className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-blue-400" />
-                          CRM Development
-                        </p>
+            <h2 className="mt-4 text-3xl font-bold md:text-4xl">What I Do</h2>
 
-                        <p className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-blue-400" />
-                          Prospecting Framework
-                        </p>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-500">
+              I work with organizations to accelerate growth, strengthen sales
+              performance and build sustainable business value.
+            </p>
+          </div>
 
-                        <p className="flex items-center gap-2">
-                          <Check className="h-4 w-4 text-blue-400" />
-                          Partnership Pipeline
-                        </p>
-                      </div>
-                    </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+
+              return (
+                <div
+                  key={index}
+                  className="rounded-xl border border-gray-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-xl"
+                >
+                  <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50">
+                    <Icon className="h-6 w-6 text-blue-600" />
                   </div>
+
+                  <h3 className="mb-3 text-lg font-bold">{service.title}</h3>
+
+                  <p className="text-sm leading-7 text-gray-500">
+                    {service.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED IMPACT */}
+      <section className="bg-[#020d22] px-6 py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10">
+            <p className="text-xs font-semibold tracking-[0.3em] text-blue-400">
+              RESULTS & ACHIEVEMENTS
+            </p>
+
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">
+              Featured Impact
+            </h2>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {/* MAIN FEATURE */}
+            <div className="rounded-2xl border border-blue-900/30 bg-[#071936] p-7 lg:col-span-2">
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-900">
+                  <Building2 className="h-6 w-6 text-blue-400" />
                 </div>
 
-                {/* Right */}
-                <div className="rounded-xl bg-[#071936] p-6">
-                  <h3 className="text-4xl font-bold text-blue-400">$20K+</h3>
-
-                  <p className="mt-2 font-semibold">Revenue Generated</p>
-
-                  <p className="mt-3 text-sm leading-relaxed text-gray-400">
-                    Through outbound prospecting and strategic sales efforts.
+                <div>
+                  <p className="text-xs font-semibold tracking-widest text-blue-400">
+                    BUSINESS DEVELOPMENT
                   </p>
 
-                  <button className="mt-5 flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium hover:bg-blue-700">
-                    Explore the Story
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
+                  <h3 className="mt-3 text-xl font-bold md:text-2xl">
+                    Building Business Development Operations From the Ground Up
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-7 text-gray-400">
+                    Designed and executed business development strategies,
+                    developed prospecting frameworks and established strategic
+                    partnership pipelines to support sustainable business
+                    growth.
+                  </p>
                 </div>
               </div>
 
-              {/* ================= CAREER SNAPSHOT ================= */}
-              <h2 className="mb-5 mt-10 text-xl font-semibold">
+              <div className="mt-8 space-y-4 border-t border-white/10 pt-6 text-sm text-gray-300">
+                <p className="flex items-center gap-3">
+                  <Check className="h-4 w-4 shrink-0 text-blue-400" />
+                  Go-to-market strategy development
+                </p>
+
+                <p className="flex items-center gap-3">
+                  <Check className="h-4 w-4 shrink-0 text-blue-400" />
+                  Prospecting and sales pipeline development
+                </p>
+
+                <p className="flex items-center gap-3">
+                  <Check className="h-4 w-4 shrink-0 text-blue-400" />
+                  Strategic partnerships and negotiations
+                </p>
+              </div>
+            </div>
+
+            {/* REVENUE HIGHLIGHT */}
+            <div className="flex flex-col justify-center rounded-2xl border border-blue-900/30 bg-[#071936] p-7">
+              <p className="text-xs font-semibold tracking-widest text-blue-400">
+                SALES PERFORMANCE
+              </p>
+
+              <h3 className="mt-5 text-5xl font-bold text-blue-400">$200K+</h3>
+
+              <p className="mt-3 text-lg font-semibold">Revenue Generated</p>
+
+              <p className="mt-4 text-sm leading-7 text-gray-400">
+                Through inbound and outbound sales efforts, strategic
+                prospecting and business development activities.
+              </p>
+
+              <Link
+                to="/experience"
+                className="mt-8 flex w-fit items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold transition hover:bg-blue-700"
+              >
+                Explore the Story
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CAREER SNAPSHOT */}
+      <section className="bg-[#030914] px-6 py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.3em] text-blue-400">
+                PROFESSIONAL JOURNEY
+              </p>
+
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">
                 Career Snapshot
               </h2>
+            </div>
 
-              <div className="grid gap-4 md:grid-cols-3">
-                {/* Career 1 */}
-                <div className="rounded-lg bg-[#071936] p-5">
-                  <p className="text-xs text-gray-400">2025 – Present</p>
+            <Link
+              to="/experience"
+              className="flex items-center gap-2 text-sm font-semibold text-blue-400 transition hover:text-blue-300"
+            >
+              View All Experience
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
 
-                  <h3 className="mt-3 font-semibold">
-                    Founding Senior Business
-                    <br />
-                    Development Manager
-                  </h3>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {careers.map((career, index) => (
+              <div
+                key={index}
+                className="rounded-xl border border-white/10 bg-[#071936] p-6 transition hover:border-blue-500/50"
+              >
+                <p className="text-xs font-semibold tracking-widest text-blue-400">
+                  {career.period}
+                </p>
 
-                  <p className="mt-2 text-xs text-gray-500">
-                    Growth-Edge Technology Company
-                  </p>
-                </div>
+                <h3 className="mt-5 text-lg font-bold leading-7">
+                  {career.role}
+                </h3>
 
-                {/* Career 2 */}
-                <div className="rounded-lg bg-[#071936] p-5">
-                  <p className="text-xs text-gray-400">Jul 2025 – Jul 2026</p>
-
-                  <h3 className="mt-3 font-semibold">
-                    Business Development / Sales
-                    <br />
-                    Professional
-                  </h3>
-                </div>
-
-                {/* Career 3 */}
-                <div className="rounded-lg bg-[#071936] p-5">
-                  <p className="text-xs text-gray-400">Earlier Experience</p>
-
-                  <h3 className="mt-3 font-semibold">
-                    Marketing • Investment Advisory
-                    <br />
-                    App Sales Business
-                  </h3>
-                </div>
+                <p className="mt-3 text-sm text-gray-400">{career.company}</p>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BOTTOM CTA */}
+      <section className="bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-700 px-6 py-16">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-7 text-center md:flex-row md:text-left">
+          <div>
+            <h2 className="text-2xl font-bold md:text-3xl">
+              Let's Turn Opportunities Into Growth.
+            </h2>
+
+            <p className="mt-3 max-w-xl text-sm leading-7 text-blue-100">
+              Have a business opportunity, partnership idea or project in mind?
+              Let's connect and create measurable impact.
+            </p>
           </div>
 
-          {/* ================= BOTTOM CTA ================= */}
-          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-purple-700 px-6 py-7 text-white">
-            <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 md:flex-row">
-              <h2 className="text-xl font-semibold">
-                Let's turn your next opportunity
-                <br />
-                into measurable growth.
-              </h2>
-
-              <button className="flex items-center gap-2 rounded-md bg-blue-500 px-5 py-3 text-sm font-medium shadow-lg hover:bg-blue-400">
-                Let's Connect
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
+          <Link
+            to="/contact"
+            className="flex shrink-0 items-center gap-3 rounded-lg bg-white px-7 py-4 text-sm font-bold text-blue-700 shadow-lg transition hover:bg-blue-50"
+          >
+            Let's Connect
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 };
 

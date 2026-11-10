@@ -1,6 +1,35 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
 
 function Contact() {
+  const formRef = useRef();
+
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSending(true);
+    setStatus("");
+
+    emailjs
+      .sendForm("service_jybp89s", "template_7udocgf", formRef.current, {
+        publicKey: "Tl8Pa-jdEX3xxNSzb",
+      })
+      .then(() => {
+        setStatus("Message sent successfully!");
+        formRef.current.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        setStatus("Failed to send message. Please try again.");
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
+  };
+
   return (
     <section className="min-h-screen py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -27,8 +56,9 @@ function Contact() {
 
               <div>
                 <h3 className="font-bold">Email</h3>
-
-                <p className="text-sm text-slate-500 mt-1">hello@example.com</p>
+                <p className="text-sm text-slate-500 mt-1">
+                  emmanuel.eze@ebbusinesspartners.com
+                </p>
               </div>
             </div>
 
@@ -37,7 +67,6 @@ function Contact() {
 
               <div>
                 <h3 className="font-bold">Phone</h3>
-
                 <p className="text-sm text-slate-500 mt-1">+234 000 000 0000</p>
               </div>
             </div>
@@ -47,45 +76,59 @@ function Contact() {
 
               <div>
                 <h3 className="font-bold">Location</h3>
-
                 <p className="text-sm text-slate-500 mt-1">Nigeria</p>
               </div>
             </div>
           </div>
 
-          {/* FORM */}
+          {/* CONTACT FORM */}
 
-          <form className="space-y-5">
+          <form ref={formRef} className="space-y-5" onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Your Name"
+              name="from_name"
+              required
               className="w-full border border-slate-200 rounded-md px-4 py-4 text-sm outline-none focus:border-indigo-500"
             />
 
             <input
               type="email"
               placeholder="Your Email"
+              name="reply_to"
+              required
               className="w-full border border-slate-200 rounded-md px-4 py-4 text-sm outline-none focus:border-indigo-500"
             />
 
             <input
               type="text"
               placeholder="Subject"
+              name="subject"
+              required
               className="w-full border border-slate-200 rounded-md px-4 py-4 text-sm outline-none focus:border-indigo-500"
             />
 
             <textarea
               rows="6"
+              name="message"
               placeholder="Your Message"
+              required
               className="w-full border border-slate-200 rounded-md px-4 py-4 text-sm outline-none focus:border-indigo-500"
             ></textarea>
 
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-md text-sm font-semibold transition"
+              disabled={isSending}
+              className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white py-4 rounded-md text-sm font-semibold transition"
             >
-              Send Message
+              {isSending ? "Sending..." : "Send Message"}
             </button>
+
+            {status && (
+              <p className="text-sm font-medium" role="status">
+                {status}
+              </p>
+            )}
           </form>
         </div>
       </div>

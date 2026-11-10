@@ -9,393 +9,580 @@ import {
   HeartPulse,
   Building2,
   GraduationCap,
-  Users,
   Mail,
   Phone,
   FileText,
   Download,
+  BriefcaseBusiness,
+  TrendingUp,
+  Handshake,
+  ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About = () => {
+  const qualities = [
+    {
+      icon: Target,
+      title: "Strategic Thinker",
+      description: "Turning ideas into practical opportunities.",
+      color: "text-blue-400",
+    },
+    {
+      icon: User,
+      title: "Relationship Builder",
+      description: "Building meaningful business relationships.",
+      color: "text-purple-400",
+    },
+    {
+      icon: Zap,
+      title: "Growth Focused",
+      description: "Focused on measurable business growth.",
+      color: "text-blue-400",
+    },
+    {
+      icon: CheckCircle,
+      title: "Growth Partner",
+      description: "Helping teams achieve their goals.",
+      color: "text-purple-400",
+    },
+  ];
+
+  const approach = [
+    {
+      icon: User,
+      title: "Understand",
+      description: "Understand the business, market and challenges.",
+    },
+    {
+      icon: Target,
+      title: "Identify",
+      description: "Find the right opportunities and target audience.",
+    },
+    {
+      icon: Zap,
+      title: "Engage",
+      description: "Build meaningful relationships and conversations.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Deliver",
+      description:
+        "Create value, drive results and achieve sustainable growth.",
+    },
+  ];
+
+  const industries = [
+    { icon: Monitor, title: "Technology & SaaS" },
+    { icon: ShoppingBag, title: "Fintech & CRM" },
+    { icon: Building2, title: "Professional Services" },
+    { icon: GraduationCap, title: "Education" },
+    { icon: HeartPulse, title: "Healthcare" },
+    { icon: BriefcaseBusiness, title: "FMCG & CPG" },
+  ];
+
+  const experience = [
+    {
+      period: "AUG 2026 — PRESENT",
+      role: "Global Sales Capability & Performance Consultant",
+      company: "Hinckley Group Africa",
+    },
+    {
+      period: "AUG 2026 — PRESENT",
+      role: "Business Development Manager",
+      company: "CamDesk Business Services",
+    },
+    {
+      period: "MAY 2025 — PRESENT",
+      role: "Founding Senior Business Development Manager",
+      company: "Growth-Stage Technology Company",
+    },
+    {
+      period: "JUL 2025 — JUL 2026",
+      role: "Sales Development Representative",
+      company: "FieldAssist",
+    },
+    {
+      period: "MAR 2024 — MAY 2025",
+      role: "Sales Executive",
+      company: "App Savvy Solutions",
+    },
+    {
+      period: "JAN 2023 — FEB 2024",
+      role: "Investment Advisor",
+      company: "Ol'Clare Real Estate and Facility Management",
+    },
+    {
+      period: "NOV 2022 — JAN 2023",
+      role: "Sales Representative",
+      company: "Moniepoint MFB",
+    },
+  ];
+
+  const capabilities = [
+    "Business Development",
+    "Sales Strategy",
+    "Client Acquisition",
+    "Strategic Partnerships",
+    "Lead Generation",
+    "Pipeline Management",
+    "Go-to-Market Strategy",
+    "Sales Enablement",
+  ];
+
   return (
-    <div className="bg-white text-gray-900">
-      {/* ================= HERO SECTION ================= */}
-      <section className="bg-[#020d22] px-6 py-12 text-white">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
-          {/* LEFT SIDE */}
+    <main className="bg-[#030914] text-white">
+      {/* HERO SECTION */}
+
+      <section className="relative overflow-hidden bg-[#020d22] px-6 py-20 md:py-24">
+        <div className="absolute -left-32 top-10 h-96 w-96 rounded-full bg-blue-600/20 blur-[120px]" />
+
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-purple-600/10 blur-[120px]" />
+
+        <div className="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-400">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-blue-400">
               About Me
             </p>
 
-            <h1 className="mb-5 text-3xl font-bold leading-tight md:text-4xl">
+            <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
               Connecting Opportunities.
               <br />
-              Creating Impact.
+              Creating <span className="text-blue-500">Impact.</span>
             </h1>
 
-            <p className="mb-8 max-w-lg text-sm leading-relaxed text-gray-400">
+            <p className="mt-7 max-w-xl text-base leading-8 text-gray-400 md:text-lg">
               I'm a results-driven business development professional with a
-              passion for building relationships, identifying opportunities, and
+              passion for building relationships, identifying opportunities and
               driving sustainable business growth.
             </p>
 
-            {/* Small Features */}
-            <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
-              <div>
-                <Target className="mb-2 h-5 w-5 text-blue-400" />
+            <p className="mt-5 text-sm font-medium text-gray-300">
+              Business Development | Sales Strategy | Strategic Partnerships
+            </p>
 
-                <h3 className="text-xs font-semibold">Strategic Thinker</h3>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Link
+                to="/experience"
+                className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 text-sm font-semibold transition hover:bg-blue-700"
+              >
+                My Experience
+                <ArrowRight className="h-4 w-4" />
+              </Link>
 
-                <p className="mt-1 text-[10px] text-gray-500">
-                  Turning ideas into practical opportunities.
-                </p>
-              </div>
+              <Link
+                to="/contact"
+                className="rounded-lg border border-blue-500/40 px-6 py-3.5 text-sm font-semibold transition hover:border-blue-400 hover:bg-blue-950/40"
+              >
+                Let's Connect
+              </Link>
+            </div>
 
-              <div>
-                <User className="mb-2 h-5 w-5 text-purple-400" />
+            <div className="mt-12 grid grid-cols-2 gap-7 sm:grid-cols-4">
+              {qualities.map((item, index) => {
+                const Icon = item.icon;
 
-                <h3 className="text-xs font-semibold">Relationship Builder</h3>
+                return (
+                  <div key={index}>
+                    <Icon className={`mb-3 h-6 w-6 ${item.color}`} />
 
-                <p className="mt-1 text-[10px] text-gray-500">
-                  Building meaningful business relationships.
-                </p>
-              </div>
+                    <h3 className="text-xs font-semibold">{item.title}</h3>
 
-              <div>
-                <Zap className="mb-2 h-5 w-5 text-blue-400" />
-
-                <h3 className="text-xs font-semibold">Growth Focused</h3>
-
-                <p className="mt-1 text-[10px] text-gray-500">
-                  Focused on measurable business growth.
-                </p>
-              </div>
-
-              <div>
-                <CheckCircle className="mb-2 h-5 w-5 text-purple-400" />
-
-                <h3 className="text-xs font-semibold">Growth Partner</h3>
-
-                <p className="mt-1 text-[10px] text-gray-500">
-                  Helping teams achieve their goals.
-                </p>
-              </div>
+                    <p className="mt-2 text-[11px] leading-5 text-gray-500">
+                      {item.description}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          {/* RIGHT SIDE - IMAGE */}
-          <div className="flex justify-center">
-            <img
-              src="/workp.jpeg"
-              alt="Profile"
-              className="w-full max-w-sm rounded-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="absolute h-80 w-80 rounded-full bg-blue-600/30 blur-[100px] sm:h-96 sm:w-96" />
 
-      {/* ================= MY APPROACH ================= */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-6 text-xl font-bold">My Approach</h2>
-
-          <div className="grid gap-5 rounded-xl border border-gray-200 p-5 shadow-sm md:grid-cols-4">
-            {/* Card 1 */}
-            <div>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
-                <User className="h-5 w-5 text-blue-600" />
-              </div>
-
-              <h3 className="mb-2 text-sm font-semibold">Understand</h3>
-
-              <p className="text-xs leading-relaxed text-gray-500">
-                Understand the business, market, and challenges.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
-                <Target className="h-5 w-5 text-blue-600" />
-              </div>
-
-              <h3 className="mb-2 text-sm font-semibold">Identify</h3>
-
-              <p className="text-xs leading-relaxed text-gray-500">
-                Find the right opportunities and target the right audience.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100">
-                <Zap className="h-5 w-5 text-purple-600" />
-              </div>
-
-              <h3 className="mb-2 text-sm font-semibold">Engage</h3>
-
-              <p className="text-xs leading-relaxed text-gray-500">
-                Build meaningful relationships and conversations.
-              </p>
-            </div>
-
-            {/* Card 4 */}
-            <div>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
-                <CheckCircle className="h-5 w-5 text-blue-600" />
-              </div>
-
-              <h3 className="mb-2 text-sm font-semibold">Deliver</h3>
-
-              <p className="text-xs leading-relaxed text-gray-500">
-                Create value, drive results, and achieve sustainable growth.
-              </p>
+            <div className="relative rounded-full border border-blue-500/30 bg-[#071936] p-3 shadow-2xl shadow-blue-900/30">
+              <img
+                src="/workp.jpeg"
+                alt="Professional profile"
+                className="h-[300px] w-[300px] rounded-full object-cover sm:h-[380px] sm:w-[380px]"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= INDUSTRIES ================= */}
-      <section className="bg-gray-50 px-6 py-10">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-8 text-xl font-bold">Industries I Work With</h2>
+      {/* MY BACKGROUND */}
 
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
-            <Industry icon={<Monitor />} title="Technology & SaaS" />
-
-            <Industry icon={<ShoppingBag />} title="Fintech / CRM" />
-
-            <Industry icon={<HeartPulse />} title="Fintech" />
-
-            <Industry icon={<Building2 />} title="Professional Services" />
-
-            <Industry icon={<GraduationCap />} title="Education" />
-
-            <Industry icon={<Users />} title="Healthcare" />
-          </div>
-        </div>
-      </section>
-
-      {/* ================= QUICK FACTS ================= */}
-      <section className="px-6 py-12">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2">
-          {/* Facts */}
+      <section className="bg-white px-6 py-20 text-gray-900">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="mb-6 text-xl font-bold">Quick Facts</h2>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-blue-600">
+              My Background
+            </p>
 
-            <div className="space-y-4 text-sm">
-              <div className="flex">
-                <span className="w-28 text-gray-500">Location</span>
+            <h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">
+              Building Relationships.
+              <br />
+              Creating Business Value.
+            </h2>
 
-                <span className="font-medium">Nigeria</span>
+            <div className="mt-7 space-y-5 text-sm leading-8 text-gray-600">
+              <p>
+                I am a business development and sales professional with
+                experience across business development, sales operations, client
+                acquisition, investment advisory and strategic partnerships.
+              </p>
+
+              <p>
+                Throughout my professional journey, I have worked on identifying
+                new business opportunities, developing prospecting strategies,
+                building commercial pipelines and strengthening relationships
+                with clients and business partners.
+              </p>
+
+              <p>
+                My approach combines strategic thinking, effective communication
+                and consistent execution. I believe sustainable business growth
+                comes from understanding customers, creating value and building
+                systems that deliver measurable outcomes.
+              </p>
+
+              <p>
+                I continue to develop my expertise in sales strategy,
+                performance improvement and business growth to help
+                organizations achieve their commercial objectives.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-[#061737] p-8 text-white shadow-xl md:p-10">
+            <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-900/60">
+              <TrendingUp className="h-7 w-7 text-blue-400" />
+            </div>
+
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-400">
+              My Philosophy
+            </p>
+
+            <h3 className="mt-5 text-2xl font-bold leading-relaxed md:text-3xl">
+              "Opportunities don't happen, you create them. Growing doesn't
+              happen by chance, it happens by choice."
+            </h3>
+
+            <div className="mt-7 h-1 w-16 rounded-full bg-blue-500" />
+
+            <p className="mt-4 text-sm font-semibold text-gray-400">— EB</p>
+          </div>
+        </div>
+      </section>
+
+      {/* MY APPROACH */}
+
+      <section className="bg-[#020d22] px-6 py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-400">
+              How I Work
+            </p>
+
+            <h2 className="mt-4 text-3xl font-bold md:text-4xl">My Approach</h2>
+
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-400">
+              A structured approach to understanding business needs, identifying
+              opportunities and delivering meaningful results.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {approach.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={index}
+                  className="rounded-xl border border-blue-900/40 bg-[#071936] p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500/50"
+                >
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-900/50">
+                    <Icon className="h-6 w-6 text-blue-400" />
+                  </div>
+
+                  <p className="mb-3 text-xs font-semibold text-blue-400">
+                    STEP 0{index + 1}
+                  </p>
+
+                  <h3 className="text-lg font-bold">{item.title}</h3>
+
+                  <p className="mt-3 text-sm leading-7 text-gray-400">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRIES */}
+
+      <section className="bg-white px-6 py-20 text-gray-900">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-blue-600">
+              Industry Exposure
+            </p>
+
+            <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+              Industries I Work With
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-500">
+              Bringing business development and sales experience across
+              different sectors and commercial environments.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+            {industries.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={index}
+                  className="rounded-xl border border-gray-200 p-6 text-center transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg"
+                >
+                  <Icon className="mx-auto mb-4 h-7 w-7 text-blue-600" />
+
+                  <p className="text-xs font-semibold text-gray-700">
+                    {item.title}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* QUICK FACTS */}
+
+      <section className="bg-[#030914] px-6 py-20">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-400">
+              Personal Profile
+            </p>
+
+            <h2 className="mt-4 text-3xl font-bold">Quick Facts</h2>
+
+            <div className="mt-8 space-y-6">
+              <div className="flex flex-col gap-2 border-b border-white/10 pb-5 sm:flex-row">
+                <span className="w-32 text-sm text-gray-500">Location</span>
+
+                <span className="text-sm font-medium text-white">Nigeria</span>
               </div>
 
-              <div className="flex">
-                <span className="w-28 text-gray-500">Experience</span>
+              <div className="flex flex-col gap-2 border-b border-white/10 pb-5 sm:flex-row">
+                <span className="w-32 text-sm text-gray-500">Experience</span>
 
-                <span className="font-medium">5+ Years</span>
-              </div>
-
-              <div className="flex">
-                <span className="w-28 text-gray-500">Focus Areas</span>
-
-                <span className="font-medium">
-                  Business Development, Partnerships,
-                  <br />
-                  Sales, GTM Strategy
+                <span className="text-sm font-medium text-white">
+                  Business Development & Sales
                 </span>
               </div>
 
-              <div className="flex">
-                <span className="w-28 text-gray-500">Clients</span>
+              <div className="flex flex-col gap-2 border-b border-white/10 pb-5 sm:flex-row">
+                <span className="w-32 text-sm text-gray-500">Focus Areas</span>
 
-                <span className="font-medium">
-                  Startups, SMEs & Growth-stage Companies
+                <span className="text-sm font-medium leading-7 text-white">
+                  Business Development, Partnerships, Sales and GTM Strategy
+                </span>
+              </div>
+
+              <div className="flex flex-col gap-2 border-b border-white/10 pb-5 sm:flex-row">
+                <span className="w-32 text-sm text-gray-500">Clients</span>
+
+                <span className="text-sm font-medium text-white">
+                  Startups, SMEs & Growth-Stage Companies
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Testimonial */}
-          <div className="flex items-center">
-            <div className="rounded-xl bg-[#061737] p-7 text-white shadow-lg">
-              <p className="mb-3 text-2xl text-blue-400">“</p>
+          <div className="rounded-2xl border border-blue-900/40 bg-[#071936] p-8">
+            <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-900/50">
+              <Handshake className="h-6 w-6 text-blue-400" />
+            </div>
 
-              <p className="text-sm leading-relaxed text-gray-300">
-                Opportunities don't happen, you create them. Growing doesn't
-                happen by chance, it happens by choice.
-              </p>
+            <h3 className="text-2xl font-bold">What Drives Me</h3>
 
-              <p className="mt-4 text-xs font-semibold text-gray-400">— EB</p>
+            <p className="mt-4 text-sm leading-8 text-gray-400">
+              I am motivated by opportunities to solve business challenges,
+              build strong professional relationships and contribute to
+              organizations that are focused on sustainable growth.
+            </p>
+
+            <div className="mt-7 space-y-4">
+              {[
+                "Creating measurable business value",
+                "Building lasting professional relationships",
+                "Improving sales processes and performance",
+                "Learning and adapting to new opportunities",
+              ].map((item, index) => (
+                <p
+                  key={index}
+                  className="flex items-center gap-3 text-sm text-gray-300"
+                >
+                  <CheckCircle className="h-4 w-4 shrink-0 text-blue-400" />
+                  {item}
+                </p>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================================================= */}
-      {/* ================= RESUME SECTION ================= */}
-      {/* ================================================= */}
+      {/* RESUME, EXPERIENCE AND EDUCATION */}
 
-      <section className="bg-gray-50 px-6 py-14">
-        <div className="mx-auto max-w-6xl">
-          {/* Resume Heading */}
-          <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-center">
+      <section className="bg-gray-50 px-6 py-20 text-gray-900">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-center">
             <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
                 My Resume
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900">
+              <h2 className="mt-4 text-3xl font-bold md:text-4xl">
                 Experience & Education
               </h2>
 
-              <p className="mt-2 max-w-xl text-sm text-gray-500">
-                A quick overview of my professional journey, education, skills,
-                and experience.
+              <p className="mt-3 max-w-xl text-sm leading-7 text-gray-500">
+                An overview of my professional journey, educational background
+                and core capabilities.
               </p>
             </div>
 
-            {/* Download Resume Button */}
             <a
               href="/Workresume.pdf"
               download
-              className="flex w-fit items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
+              className="flex w-fit items-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-blue-700"
             >
               <Download className="h-4 w-4" />
               Download Resume
             </a>
           </div>
 
-          {/* Resume Cards */}
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* ================= EXPERIENCE ================= */}
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-              <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
-                  <FileText className="h-5 w-5 text-blue-600" />
+          <div className="grid gap-7 lg:grid-cols-2">
+            {/* PROFESSIONAL EXPERIENCE */}
+
+            <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm">
+              <div className="mb-8 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100">
+                  <FileText className="h-6 w-6 text-blue-600" />
                 </div>
 
-                <h3 className="text-lg font-bold">Experience</h3>
+                <div>
+                  <h3 className="text-xl font-bold">Professional Experience</h3>
+
+                  <p className="mt-1 text-xs text-gray-500">
+                    Career history and positions
+                  </p>
+                </div>
               </div>
 
-              {/* Experience 1 */}
-              <div className="border-l-2 border-blue-500 pl-5">
-                <p className="text-xs font-medium text-blue-600">
-                  2025 – Present
-                </p>
+              <div className="space-y-7">
+                {experience.map((item, index) => (
+                  <div
+                    key={index}
+                    className="relative border-l-2 border-blue-200 pl-5"
+                  >
+                    <div className="absolute -left-[6px] top-1 h-2.5 w-2.5 rounded-full bg-blue-600" />
 
-                <h4 className="mt-2 font-semibold text-gray-900">
-                  Business Development Professional
-                </h4>
+                    <p className="text-[10px] font-bold tracking-wider text-blue-600">
+                      {item.period}
+                    </p>
 
-                <p className="mt-1 text-sm text-gray-500">
-                  Business Development & Sales
-                </p>
+                    <h4 className="mt-2 text-sm font-bold text-gray-900">
+                      {item.role}
+                    </h4>
 
-                <p className="mt-3 text-sm leading-relaxed text-gray-500">
-                  Focused on identifying opportunities, building relationships,
-                  developing partnerships, and supporting business growth.
-                </p>
+                    <p className="mt-1 text-xs text-gray-500">{item.company}</p>
+                  </div>
+                ))}
               </div>
 
-              {/* Experience 2 */}
-              <div className="mt-7 border-l-2 border-gray-200 pl-5">
-                <p className="text-xs font-medium text-blue-600">
-                  Previous Experience
-                </p>
-
-                <h4 className="mt-2 font-semibold text-gray-900">
-                  Sales & Client Acquisition
-                </h4>
-
-                <p className="mt-1 text-sm text-gray-500">
-                  Sales / Business Development
-                </p>
-
-                <p className="mt-3 text-sm leading-relaxed text-gray-500">
-                  Worked on prospecting, client communication, lead generation,
-                  and converting opportunities into business relationships.
-                </p>
-              </div>
+              <Link
+                to="/experience"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800"
+              >
+                View Full Experience
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
 
-            {/* ================= EDUCATION ================= */}
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-              <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100">
-                  <GraduationCap className="h-5 w-5 text-purple-600" />
+            {/* EDUCATION AND SKILLS */}
+
+            <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm">
+              <div className="mb-8 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100">
+                  <GraduationCap className="h-6 w-6 text-purple-600" />
                 </div>
 
-                <h3 className="text-lg font-bold">Education</h3>
+                <div>
+                  <h3 className="text-xl font-bold">Education & Training</h3>
+
+                  <p className="mt-1 text-xs text-gray-500">
+                    Academic and professional qualifications
+                  </p>
+                </div>
               </div>
 
-              {/* Education */}
               <div className="border-l-2 border-purple-500 pl-5">
-                <p className="text-xs font-medium text-purple-600">Current</p>
+                <p className="text-xs font-semibold text-purple-600">
+                  JANUARY 2020
+                </p>
 
-                <h4 className="mt-2 font-semibold text-gray-900">
-                  Federal Polytechnic Nekede
+                <h4 className="mt-3 font-bold text-gray-900">
+                  Diploma in Computer Applications
                 </h4>
 
-                <p className="mt-1 text-sm text-gray-500">HND 1</p>
-
-                <p className="mt-3 text-sm leading-relaxed text-gray-500">
-                  Currently pursuing higher education while developing
-                  professional and technical skills.
+                <p className="mt-2 text-sm text-gray-500">
+                  HD Global Computers, Enugu State
                 </p>
               </div>
 
-              {/* Core Skills */}
-              <div className="mt-8">
-                <h4 className="mb-4 font-semibold text-gray-900">
-                  Core Skills
-                </h4>
+              {/* CORE SKILLS */}
+
+              <div className="mt-10">
+                <h4 className="mb-5 font-bold">Core Skills</h4>
 
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-600">
-                    Business Development
-                  </span>
-
-                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-600">
-                    Sales
-                  </span>
-
-                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-600">
-                    Client Acquisition
-                  </span>
-
-                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-600">
-                    Strategic Partnerships
-                  </span>
-
-                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-600">
-                    Communication
-                  </span>
-
-                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-600">
-                    Lead Generation
-                  </span>
+                  {capabilities.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="rounded-full border border-blue-100 bg-blue-50 px-3 py-2 text-xs font-medium text-blue-700"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Resume CTA */}
-          <div className="mt-8 rounded-xl bg-[#020d22] p-7 text-center text-white">
-            <h3 className="text-xl font-bold">
-              Want to know more about my experience?
+          {/* RESUME CTA */}
+
+          <div className="mt-10 rounded-2xl bg-[#020d22] px-7 py-10 text-center text-white">
+            <h3 className="text-2xl font-bold">
+              Want to Know More About My Experience?
             </h3>
 
-            <p className="mx-auto mt-2 max-w-lg text-sm text-gray-400">
-              Download my complete resume to learn more about my background,
-              skills, experience, and qualifications.
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-400">
+              Download my complete resume to learn more about my professional
+              background, skills and qualifications.
             </p>
 
             <a
               href="/Workresume.pdf"
               download
-              className="mt-5 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium transition hover:bg-blue-700"
+              className="mt-7 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-7 py-3.5 text-sm font-semibold transition hover:bg-blue-700"
             >
               <Download className="h-4 w-4" />
               Download My Resume
@@ -404,58 +591,80 @@ const About = () => {
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
-      <footer className="bg-[#020d22] px-6 py-8 text-white">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          {/* Logo */}
-          <div>
-            <h2 className="text-2xl font-bold text-blue-500">EB</h2>
+      {/* CLEAN FOOTER — NO BOTTOM NAVIGATION */}
 
-            <p className="mt-1 text-xs text-gray-500">
-              Connecting opportunities.
-              <br />
-              Creating impact.
-            </p>
+      <footer className="border-t border-blue-900/40 bg-[#020d22] px-6 py-12 text-white">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col items-center justify-between gap-8 text-center md:flex-row md:text-left">
+            {/* BRAND */}
+
+            <div>
+              <h2 className="text-3xl font-extrabold tracking-wider text-blue-500">
+                EB<span className="text-white">.</span>
+              </h2>
+
+              <p className="mt-3 text-sm leading-6 text-gray-400">
+                Connecting opportunities.
+                <br />
+                Creating impact.
+              </p>
+            </div>
+
+            {/* CONTACT DETAILS */}
+
+            <div className="space-y-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-400">
+                Get in Touch
+              </p>
+
+              <a
+                href="mailto:example@email.com"
+                className="flex items-center justify-center gap-3 text-sm text-gray-300 transition hover:text-blue-400 md:justify-start"
+              >
+                <Mail className="h-4 w-4 text-blue-400" />
+                <span>emmanuel.eze@ebbusinesspartners.com</span>
+              </a>
+
+              <a
+                href="tel:+2340000000000"
+                className="flex items-center justify-center gap-3 text-sm text-gray-300 transition hover:text-blue-400 md:justify-start"
+              >
+                <Phone className="h-4 w-4 text-blue-400" />
+                <span>+234 707 140 3333</span>
+              </a>
+            </div>
+
+            {/* CONTACT CTA */}
+
+            <div>
+              <p className="text-sm font-semibold text-white">
+                Have a business opportunity?
+              </p>
+
+              <p className="mt-2 text-xs text-gray-400">
+                Let's connect and create value.
+              </p>
+
+              <Link
+                to="/contact"
+                className="mt-4 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+              >
+                Contact Me
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
 
-          {/* Contact */}
-          <div className="space-y-2 text-xs text-gray-400">
-            <p className="flex items-center gap-2">
-              <Mail className="h-4 w-4 text-blue-400" />
-              example@email.com
+          {/* COPYRIGHT */}
+
+          <div className="mt-10 border-t border-white/10 pt-6 text-center">
+            <p className="text-xs text-gray-500">
+              © {new Date().getFullYear()} EB. All rights reserved.
             </p>
-
-            <p className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-blue-400" />
-              +234 000 000 0000
-            </p>
-          </div>
-
-          {/* Social */}
-          <div className="flex items-center gap-3">
-            <Phone className="h-5 w-5 text-blue-400" />
-
-            <span className="text-xs text-gray-400">LinkedIn</span>
           </div>
         </div>
       </footer>
-    </div>
-  );
-};
-
-/* ================= INDUSTRY COMPONENT ================= */
-
-const Industry = ({ icon, title }) => {
-  return (
-    <div className="text-center">
-      <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center text-purple-500">
-        {React.cloneElement(icon, {
-          className: "h-6 w-6",
-        })}
-      </div>
-
-      <p className="text-xs font-medium text-gray-600">{title}</p>
-    </div>
+    </main>
   );
 };
 
