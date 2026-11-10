@@ -67,7 +67,7 @@ function Contact() {
 
               <div>
                 <h3 className="font-bold">Phone</h3>
-                <p className="text-sm text-slate-500 mt-1">+234 000 000 0000</p>
+                <p className="text-sm text-slate-500 mt-1">+2349039555488</p>
               </div>
             </div>
 

@@ -17,6 +17,9 @@ import {
   TrendingUp,
   Handshake,
   ArrowRight,
+  Award,
+  Lightbulb,
+  Globe,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -26,25 +29,21 @@ const About = () => {
       icon: Target,
       title: "Strategic Thinker",
       description: "Turning ideas into practical opportunities.",
-      color: "text-blue-400",
     },
     {
       icon: User,
       title: "Relationship Builder",
       description: "Building meaningful business relationships.",
-      color: "text-purple-400",
     },
     {
       icon: Zap,
       title: "Growth Focused",
       description: "Focused on measurable business growth.",
-      color: "text-blue-400",
     },
     {
       icon: CheckCircle,
       title: "Growth Partner",
       description: "Helping teams achieve their goals.",
-      color: "text-purple-400",
     },
   ];
 
@@ -52,17 +51,18 @@ const About = () => {
     {
       icon: User,
       title: "Understand",
-      description: "Understand the business, market and challenges.",
+      description: "Understand the business, market, customers and challenges.",
     },
     {
       icon: Target,
       title: "Identify",
-      description: "Find the right opportunities and target audience.",
+      description: "Discover the right opportunities and target audiences.",
     },
     {
       icon: Zap,
       title: "Engage",
-      description: "Build meaningful relationships and conversations.",
+      description:
+        "Build meaningful relationships and productive conversations.",
     },
     {
       icon: CheckCircle,
@@ -95,7 +95,7 @@ const About = () => {
     {
       period: "MAY 2025 — PRESENT",
       role: "Founding Senior Business Development Manager",
-      company: "Growth-Stage Technology Company",
+      company: "CamTalk Solutions",
     },
     {
       period: "JUL 2025 — JUL 2026",
@@ -130,63 +130,79 @@ const About = () => {
     "Sales Enablement",
   ];
 
+  const motivations = [
+    "Creating measurable business value",
+    "Building lasting professional relationships",
+    "Improving sales processes and performance",
+    "Learning and adapting to new opportunities",
+  ];
+
   return (
-    <main className="bg-[#030914] text-white">
+    <main className="overflow-hidden bg-[#030914] text-white">
       {/* HERO SECTION */}
 
-      <section className="relative overflow-hidden bg-[#020d22] px-6 py-20 md:py-24">
+      <section className="relative overflow-hidden bg-[#020d22] px-6 py-24 md:py-28">
         <div className="absolute -left-32 top-10 h-96 w-96 rounded-full bg-blue-600/20 blur-[120px]" />
 
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-purple-600/10 blur-[120px]" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
           <div>
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-blue-400">
+            <p className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.35em] text-blue-400">
+              <span className="h-[2px] w-8 bg-blue-500" />
               About Me
             </p>
 
-            <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               Connecting Opportunities.
               <br />
               Creating <span className="text-blue-500">Impact.</span>
             </h1>
 
-            <p className="mt-7 max-w-xl text-base leading-8 text-gray-400 md:text-lg">
+            <p className="mt-8 max-w-xl text-base leading-8 text-gray-400 md:text-lg">
               I'm a results-driven business development professional with a
               passion for building relationships, identifying opportunities and
               driving sustainable business growth.
             </p>
 
-            <p className="mt-5 text-sm font-medium text-gray-300">
-              Business Development | Sales Strategy | Strategic Partnerships
+            <p className="mt-6 text-sm font-semibold leading-7 text-gray-300">
+              Business Development
+              <span className="mx-2 text-blue-500">|</span>
+              Sales Strategy
+              <span className="mx-2 text-blue-500">|</span>
+              Strategic Partnerships
             </p>
 
             <div className="mt-9 flex flex-wrap gap-4">
               <Link
                 to="/experience"
-                className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 text-sm font-semibold transition hover:bg-blue-700"
+                className="group inline-flex items-center gap-3 rounded-lg bg-blue-600 px-7 py-4 text-sm font-bold shadow-lg shadow-blue-900/30 transition duration-300 hover:-translate-y-1 hover:bg-blue-700"
               >
                 My Experience
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
               </Link>
 
               <Link
                 to="/contact"
-                className="rounded-lg border border-blue-500/40 px-6 py-3.5 text-sm font-semibold transition hover:border-blue-400 hover:bg-blue-950/40"
+                className="inline-flex items-center gap-2 rounded-lg border border-blue-500/40 px-7 py-4 text-sm font-bold transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-950/50"
               >
                 Let's Connect
               </Link>
             </div>
 
-            <div className="mt-12 grid grid-cols-2 gap-7 sm:grid-cols-4">
+            {/* QUALITIES */}
+
+            <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-4">
               {qualities.map((item, index) => {
                 const Icon = item.icon;
 
                 return (
-                  <div key={index}>
-                    <Icon className={`mb-3 h-6 w-6 ${item.color}`} />
+                  <div key={index} className="group">
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 transition duration-300 group-hover:bg-blue-600">
+                      <Icon className="h-5 w-5 text-blue-400 group-hover:text-white" />
+                    </div>
 
-                    <h3 className="text-xs font-semibold">{item.title}</h3>
+                    <h3 className="text-xs font-bold">{item.title}</h3>
 
                     <p className="mt-2 text-[11px] leading-5 text-gray-500">
                       {item.description}
@@ -197,36 +213,48 @@ const About = () => {
             </div>
           </div>
 
+          {/* PROFILE IMAGE */}
+
           <div className="relative flex justify-center lg:justify-end">
             <div className="absolute h-80 w-80 rounded-full bg-blue-600/30 blur-[100px] sm:h-96 sm:w-96" />
 
-            <div className="relative rounded-full border border-blue-500/30 bg-[#071936] p-3 shadow-2xl shadow-blue-900/30">
+            <div className="relative rounded-full border border-blue-500/30 bg-[#071936] p-3 shadow-2xl shadow-blue-900/40">
               <img
                 src="/workp.jpeg"
                 alt="Professional profile"
-                className="h-[300px] w-[300px] rounded-full object-cover sm:h-[380px] sm:w-[380px]"
+                className="h-[280px] w-[280px] rounded-full object-cover sm:h-[380px] sm:w-[380px] lg:h-[420px] lg:w-[420px]"
               />
+            </div>
+
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 rounded-xl border border-blue-500/30 bg-[#071936] px-6 py-4 shadow-xl sm:left-0 sm:translate-x-0">
+              <p className="text-xs font-semibold text-gray-400">
+                Professional Focus
+              </p>
+
+              <p className="mt-1 text-sm font-bold text-blue-400">
+                Business Growth & Strategy
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* MY BACKGROUND */}
+      {/* BACKGROUND */}
 
-      <section className="bg-white px-6 py-20 text-gray-900">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+      <section className="bg-white px-6 py-24 text-gray-900">
+        <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-blue-600">
               My Background
             </p>
 
-            <h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">
+            <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl">
               Building Relationships.
               <br />
               Creating Business Value.
             </h2>
 
-            <div className="mt-7 space-y-5 text-sm leading-8 text-gray-600">
+            <div className="mt-8 space-y-5 text-sm leading-8 text-gray-600">
               <p>
                 I am a business development and sales professional with
                 experience across business development, sales operations, client
@@ -255,39 +283,47 @@ const About = () => {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-[#061737] p-8 text-white shadow-xl md:p-10">
-            <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-900/60">
-              <TrendingUp className="h-7 w-7 text-blue-400" />
+          {/* PHILOSOPHY CARD */}
+
+          <div className="relative overflow-hidden rounded-3xl bg-[#061737] p-9 text-white shadow-2xl md:p-12">
+            <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-blue-600/20 blur-3xl" />
+
+            <div className="relative">
+              <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-900/60">
+                <TrendingUp className="h-7 w-7 text-blue-400" />
+              </div>
+
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-blue-400">
+                My Philosophy
+              </p>
+
+              <h3 className="mt-7 text-2xl font-bold leading-relaxed md:text-3xl">
+                "Opportunities don't happen, you create them. Growing doesn't
+                happen by chance, it happens by choice."
+              </h3>
+
+              <div className="mt-9 h-1 w-16 rounded-full bg-blue-500" />
+
+              <p className="mt-5 text-sm font-bold text-gray-400">— EB</p>
             </div>
-
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-400">
-              My Philosophy
-            </p>
-
-            <h3 className="mt-5 text-2xl font-bold leading-relaxed md:text-3xl">
-              "Opportunities don't happen, you create them. Growing doesn't
-              happen by chance, it happens by choice."
-            </h3>
-
-            <div className="mt-7 h-1 w-16 rounded-full bg-blue-500" />
-
-            <p className="mt-4 text-sm font-semibold text-gray-400">— EB</p>
           </div>
         </div>
       </section>
 
-      {/* MY APPROACH */}
+      {/* APPROACH */}
 
-      <section className="bg-[#020d22] px-6 py-20">
+      <section className="bg-[#020d22] px-6 py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-400">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-blue-400">
               How I Work
             </p>
 
-            <h2 className="mt-4 text-3xl font-bold md:text-4xl">My Approach</h2>
+            <h2 className="mt-5 text-3xl font-extrabold sm:text-4xl">
+              My Approach
+            </h2>
 
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-400">
+            <p className="mt-5 text-sm leading-8 text-gray-400">
               A structured approach to understanding business needs, identifying
               opportunities and delivering meaningful results.
             </p>
@@ -300,19 +336,19 @@ const About = () => {
               return (
                 <div
                   key={index}
-                  className="rounded-xl border border-blue-900/40 bg-[#071936] p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500/50"
+                  className="group rounded-2xl border border-blue-900/40 bg-[#071936] p-8 transition duration-300 hover:-translate-y-2 hover:border-blue-500/60 hover:shadow-xl hover:shadow-blue-950/30"
                 >
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-900/50">
-                    <Icon className="h-6 w-6 text-blue-400" />
+                  <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-900/50 transition group-hover:bg-blue-600">
+                    <Icon className="h-6 w-6 text-blue-400 group-hover:text-white" />
                   </div>
 
-                  <p className="mb-3 text-xs font-semibold text-blue-400">
+                  <p className="mb-4 text-xs font-bold tracking-widest text-blue-400">
                     STEP 0{index + 1}
                   </p>
 
-                  <h3 className="text-lg font-bold">{item.title}</h3>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
 
-                  <p className="mt-3 text-sm leading-7 text-gray-400">
+                  <p className="mt-4 text-sm leading-7 text-gray-400">
                     {item.description}
                   </p>
                 </div>
@@ -324,35 +360,37 @@ const About = () => {
 
       {/* INDUSTRIES */}
 
-      <section className="bg-white px-6 py-20 text-gray-900">
+      <section className="bg-white px-6 py-24 text-gray-900">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-blue-600">
               Industry Exposure
             </p>
 
-            <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+            <h2 className="mt-5 text-3xl font-extrabold sm:text-4xl">
               Industries I Work With
             </h2>
 
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-500">
+            <p className="mt-5 text-sm leading-8 text-gray-500">
               Bringing business development and sales experience across
               different sectors and commercial environments.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
             {industries.map((item, index) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={index}
-                  className="rounded-xl border border-gray-200 p-6 text-center transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg"
+                  className="group rounded-2xl border border-gray-200 bg-white p-7 text-center transition duration-300 hover:-translate-y-2 hover:border-blue-300 hover:shadow-xl"
                 >
-                  <Icon className="mx-auto mb-4 h-7 w-7 text-blue-600" />
+                  <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 transition group-hover:bg-blue-600">
+                    <Icon className="h-7 w-7 text-blue-600 group-hover:text-white" />
+                  </div>
 
-                  <p className="text-xs font-semibold text-gray-700">
+                  <p className="text-xs font-bold leading-6 text-gray-700">
                     {item.title}
                   </p>
                 </div>
@@ -364,96 +402,84 @@ const About = () => {
 
       {/* QUICK FACTS */}
 
-      <section className="bg-[#030914] px-6 py-20">
+      <section className="bg-[#030914] px-6 py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-400">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-blue-400">
               Personal Profile
             </p>
 
-            <h2 className="mt-4 text-3xl font-bold">Quick Facts</h2>
+            <h2 className="mt-5 text-3xl font-extrabold">Quick Facts</h2>
 
-            <div className="mt-8 space-y-6">
-              <div className="flex flex-col gap-2 border-b border-white/10 pb-5 sm:flex-row">
-                <span className="w-32 text-sm text-gray-500">Location</span>
+            <div className="mt-10 space-y-7">
+              {[
+                ["Location", "Nigeria"],
+                ["Experience", "Business Development & Sales"],
+                [
+                  "Focus Areas",
+                  "Business Development, Partnerships, Sales and GTM Strategy",
+                ],
+                ["Clients", "Startups, SMEs & Growth-Stage Companies"],
+              ].map(([label, value], index) => (
+                <div
+                  key={index}
+                  className="flex flex-col gap-2 border-b border-white/10 pb-6 sm:flex-row sm:gap-6"
+                >
+                  <span className="w-32 shrink-0 text-sm text-gray-500">
+                    {label}
+                  </span>
 
-                <span className="text-sm font-medium text-white">Nigeria</span>
-              </div>
-
-              <div className="flex flex-col gap-2 border-b border-white/10 pb-5 sm:flex-row">
-                <span className="w-32 text-sm text-gray-500">Experience</span>
-
-                <span className="text-sm font-medium text-white">
-                  Business Development & Sales
-                </span>
-              </div>
-
-              <div className="flex flex-col gap-2 border-b border-white/10 pb-5 sm:flex-row">
-                <span className="w-32 text-sm text-gray-500">Focus Areas</span>
-
-                <span className="text-sm font-medium leading-7 text-white">
-                  Business Development, Partnerships, Sales and GTM Strategy
-                </span>
-              </div>
-
-              <div className="flex flex-col gap-2 border-b border-white/10 pb-5 sm:flex-row">
-                <span className="w-32 text-sm text-gray-500">Clients</span>
-
-                <span className="text-sm font-medium text-white">
-                  Startups, SMEs & Growth-Stage Companies
-                </span>
-              </div>
+                  <span className="text-sm font-semibold leading-7 text-white">
+                    {value}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="rounded-2xl border border-blue-900/40 bg-[#071936] p-8">
-            <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-900/50">
-              <Handshake className="h-6 w-6 text-blue-400" />
+          {/* MOTIVATION */}
+
+          <div className="rounded-3xl border border-blue-900/40 bg-[#071936] p-8 md:p-10">
+            <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-900/50">
+              <Handshake className="h-7 w-7 text-blue-400" />
             </div>
 
             <h3 className="text-2xl font-bold">What Drives Me</h3>
 
-            <p className="mt-4 text-sm leading-8 text-gray-400">
+            <p className="mt-5 text-sm leading-8 text-gray-400">
               I am motivated by opportunities to solve business challenges,
               build strong professional relationships and contribute to
               organizations that are focused on sustainable growth.
             </p>
 
-            <div className="mt-7 space-y-4">
-              {[
-                "Creating measurable business value",
-                "Building lasting professional relationships",
-                "Improving sales processes and performance",
-                "Learning and adapting to new opportunities",
-              ].map((item, index) => (
-                <p
-                  key={index}
-                  className="flex items-center gap-3 text-sm text-gray-300"
-                >
-                  <CheckCircle className="h-4 w-4 shrink-0 text-blue-400" />
-                  {item}
-                </p>
+            <div className="mt-9 space-y-5">
+              {motivations.map((item, index) => (
+                <div key={index} className="flex items-center gap-4">
+                  <CheckCircle className="h-5 w-5 shrink-0 text-blue-400" />
+
+                  <p className="text-sm text-gray-300">{item}</p>
+                </div>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* RESUME, EXPERIENCE AND EDUCATION */}
+      {/* EXPERIENCE AND EDUCATION */}
 
-      <section className="bg-gray-50 px-6 py-20 text-gray-900">
+      <section className="bg-gray-50 px-6 py-24 text-gray-900">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-center">
+          <div className="mb-14 flex flex-col justify-between gap-7 md:flex-row md:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-blue-600">
                 My Resume
               </p>
 
-              <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+              <h2 className="mt-5 text-3xl font-extrabold sm:text-4xl">
                 Experience & Education
               </h2>
 
-              <p className="mt-3 max-w-xl text-sm leading-7 text-gray-500">
+              <p className="mt-4 max-w-xl text-sm leading-8 text-gray-500">
                 An overview of my professional journey, educational background
                 and core capabilities.
               </p>
@@ -462,24 +488,26 @@ const About = () => {
             <a
               href="/Workresume.pdf"
               download
-              className="flex w-fit items-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-blue-700"
+              className="inline-flex w-fit items-center gap-3 rounded-lg bg-blue-600 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-blue-200 transition hover:-translate-y-1 hover:bg-blue-700"
             >
-              <Download className="h-4 w-4" />
+              <Download className="h-5 w-5" />
               Download Resume
             </a>
           </div>
 
-          <div className="grid gap-7 lg:grid-cols-2">
-            {/* PROFESSIONAL EXPERIENCE */}
+          <div className="grid gap-8 lg:grid-cols-2">
+            {/* EXPERIENCE */}
 
-            <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm">
-              <div className="mb-8 flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100">
-                  <FileText className="h-6 w-6 text-blue-600" />
+            <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm md:p-9">
+              <div className="mb-10 flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-100">
+                  <BriefcaseBusiness className="h-7 w-7 text-blue-600" />
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold">Professional Experience</h3>
+                  <h3 className="text-xl font-extrabold">
+                    Professional Experience
+                  </h3>
 
                   <p className="mt-1 text-xs text-gray-500">
                     Career history and positions
@@ -487,30 +515,32 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="space-y-7">
+              <div className="space-y-8">
                 {experience.map((item, index) => (
                   <div
                     key={index}
-                    className="relative border-l-2 border-blue-200 pl-5"
+                    className="relative border-l-2 border-blue-200 pl-6"
                   >
-                    <div className="absolute -left-[6px] top-1 h-2.5 w-2.5 rounded-full bg-blue-600" />
+                    <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full border-2 border-white bg-blue-600 ring-2 ring-blue-100" />
 
-                    <p className="text-[10px] font-bold tracking-wider text-blue-600">
+                    <p className="text-[10px] font-extrabold tracking-widest text-blue-600">
                       {item.period}
                     </p>
 
-                    <h4 className="mt-2 text-sm font-bold text-gray-900">
+                    <h4 className="mt-3 text-sm font-bold leading-6 text-gray-900">
                       {item.role}
                     </h4>
 
-                    <p className="mt-1 text-xs text-gray-500">{item.company}</p>
+                    <p className="mt-2 text-xs font-medium text-gray-500">
+                      {item.company}
+                    </p>
                   </div>
                 ))}
               </div>
 
               <Link
                 to="/experience"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800"
+                className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition hover:gap-4"
               >
                 View Full Experience
                 <ArrowRight className="h-4 w-4" />
@@ -519,58 +549,63 @@ const About = () => {
 
             {/* EDUCATION AND SKILLS */}
 
-            <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm">
-              <div className="mb-8 flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100">
-                  <GraduationCap className="h-6 w-6 text-purple-600" />
+            <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm md:p-9">
+              <div className="mb-10 flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-purple-100">
+                  <GraduationCap className="h-7 w-7 text-purple-600" />
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold">Education & Training</h3>
+                  <h3 className="text-xl font-extrabold">
+                    Education & Training
+                  </h3>
 
                   <p className="mt-1 text-xs text-gray-500">
                     Academic and professional qualifications
                   </p>
                 </div>
               </div>
-              <div className="border-l-2 border-purple-500 pl-5">
-                <p className="text-xs font-semibold text-purple-600">
-                  SEPTEMBER 2026
-                </p>
 
-                <h4 className="mt-3 font-bold text-gray-900">
-                  Bachelor in Business Administration (BBA)
-                </h4>
+              <div className="space-y-8">
+                <div className="border-l-2 border-purple-500 pl-5">
+                  <p className="text-xs font-bold tracking-wider text-purple-600">
+                    SEPTEMBER 2026
+                  </p>
 
-                <p className="mt-2 text-sm text-gray-500">
-                  University of the people, California, United States
-                </p>
+                  <h4 className="mt-3 font-bold text-gray-900">
+                    Bachelor in Business Administration (BBA)
+                  </h4>
+
+                  <p className="mt-2 text-sm leading-6 text-gray-500">
+                    University of the People, California, United States
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-purple-500 pl-5">
+                  <p className="text-xs font-bold tracking-wider text-purple-600">
+                    JANUARY 2020
+                  </p>
+
+                  <h4 className="mt-3 font-bold text-gray-900">
+                    Diploma in Computer Applications
+                  </h4>
+
+                  <p className="mt-2 text-sm text-gray-500">
+                    HD Global Computers, Enugu State
+                  </p>
+                </div>
               </div>
 
-              <div className="border-l-2 border-purple-500 pl-5">
-                <p className="text-xs font-semibold text-purple-600">
-                  JANUARY 2020
-                </p>
+              {/* SKILLS */}
 
-                <h4 className="mt-3 font-bold text-gray-900">
-                  Diploma in Computer Applications
-                </h4>
+              <div className="mt-12 border-t border-gray-100 pt-8">
+                <h4 className="mb-6 text-lg font-extrabold">Core Skills</h4>
 
-                <p className="mt-2 text-sm text-gray-500">
-                  HD Global Computers, Enugu State
-                </p>
-              </div>
-
-              {/* CORE SKILLS */}
-
-              <div className="mt-10">
-                <h4 className="mb-5 font-bold">Core Skills</h4>
-
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {capabilities.map((skill, index) => (
                     <span
                       key={index}
-                      className="rounded-full border border-blue-100 bg-blue-50 px-3 py-2 text-xs font-medium text-blue-700"
+                      className="rounded-full border border-blue-100 bg-blue-50 px-4 py-2.5 text-xs font-semibold text-blue-700 transition hover:border-blue-300 hover:bg-blue-100"
                     >
                       {skill}
                     </span>
@@ -582,85 +617,97 @@ const About = () => {
 
           {/* RESUME CTA */}
 
-          <div className="mt-10 rounded-2xl bg-[#020d22] px-7 py-10 text-center text-white">
-            <h3 className="text-2xl font-bold">
-              Want to Know More About My Experience?
-            </h3>
+          <div className="relative mt-12 overflow-hidden rounded-3xl bg-[#020d22] px-7 py-14 text-center text-white md:px-12">
+            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-600/20 blur-[100px]" />
 
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-400">
-              Download my complete resume to learn more about my professional
-              background, skills and qualifications.
-            </p>
+            <div className="relative">
+              <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-900/60">
+                <FileText className="h-7 w-7 text-blue-400" />
+              </div>
 
-            <a
-              href="/Workresume.pdf"
-              download
-              className="mt-7 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-7 py-3.5 text-sm font-semibold transition hover:bg-blue-700"
-            >
-              <Download className="h-4 w-4" />
-              Download My Resume
-            </a>
+              <h3 className="text-2xl font-extrabold md:text-3xl">
+                Want to Know More About My Experience?
+              </h3>
+
+              <p className="mx-auto mt-5 max-w-xl text-sm leading-8 text-gray-400">
+                Download my complete resume to learn more about my professional
+                background, skills and qualifications.
+              </p>
+
+              <a
+                href="/Workresume.pdf"
+                download
+                className="mt-8 inline-flex items-center gap-3 rounded-lg bg-blue-600 px-8 py-4 text-sm font-bold text-white transition hover:-translate-y-1 hover:bg-blue-700"
+              >
+                <Download className="h-5 w-5" />
+                Download My Resume
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CLEAN FOOTER — NO BOTTOM NAVIGATION */}
+      {/* FOOTER */}
 
-      <footer className="border-t border-blue-900/40 bg-[#020d22] px-6 py-12 text-white">
+      <footer className="border-t border-blue-900/40 bg-[#020d22] px-6 py-14 text-white">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col items-center justify-between gap-8 text-center md:flex-row md:text-left">
+          <div className="grid gap-12 text-center md:grid-cols-3 md:text-left">
             {/* BRAND */}
 
             <div>
-              <h2 className="text-3xl font-extrabold tracking-wider text-blue-500">
+              <h2 className="text-4xl font-extrabold tracking-wider text-blue-500">
                 EB<span className="text-white">.</span>
               </h2>
 
-              <p className="mt-3 text-sm leading-6 text-gray-400">
+              <p className="mt-5 text-sm leading-7 text-gray-400">
                 Connecting opportunities.
                 <br />
                 Creating impact.
               </p>
             </div>
 
-            {/* CONTACT DETAILS */}
+            {/* CONTACT */}
 
-            <div className="space-y-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-400">
+            <div>
+              <p className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-blue-400">
                 Get in Touch
               </p>
 
-              <a
-                href="mailto:example@email.com"
-                className="flex items-center justify-center gap-3 text-sm text-gray-300 transition hover:text-blue-400 md:justify-start"
-              >
-                <Mail className="h-4 w-4 text-blue-400" />
-                <span>emmanuel.eze@ebbusinesspartners.com</span>
-              </a>
+              <div className="space-y-5">
+                <a
+                  href="mailto:emmanuel.eze@ebbusinesspartners.com"
+                  className="flex items-center justify-center gap-3 text-sm text-gray-300 transition hover:text-blue-400 md:justify-start"
+                >
+                  <Mail className="h-5 w-5 shrink-0 text-blue-400" />
+                  <span className="break-all">
+                    emmanuel.eze@ebbusinesspartners.com
+                  </span>
+                </a>
 
-              <a
-                href="tel:+2340000000000"
-                className="flex items-center justify-center gap-3 text-sm text-gray-300 transition hover:text-blue-400 md:justify-start"
-              >
-                <Phone className="h-4 w-4 text-blue-400" />
-                <span>+234 707 140 3333</span>
-              </a>
+                <a
+                  href="tel:+2349039555488"
+                  className="flex items-center justify-center gap-3 text-sm text-gray-300 transition hover:text-blue-400 md:justify-start"
+                >
+                  <Phone className="h-5 w-5 shrink-0 text-blue-400" />
+                  +2349039555488
+                </a>
+              </div>
             </div>
 
-            {/* CONTACT CTA */}
+            {/* CTA */}
 
             <div>
-              <p className="text-sm font-semibold text-white">
+              <p className="text-base font-bold">
                 Have a business opportunity?
               </p>
 
-              <p className="mt-2 text-xs text-gray-400">
+              <p className="mt-3 text-sm text-gray-400">
                 Let's connect and create value.
               </p>
 
               <Link
                 to="/contact"
-                className="mt-4 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+                className="mt-6 inline-flex items-center gap-3 rounded-lg bg-blue-600 px-6 py-3.5 text-sm font-bold transition hover:-translate-y-1 hover:bg-blue-700"
               >
                 Contact Me
                 <ArrowRight className="h-4 w-4" />
@@ -670,9 +717,13 @@ const About = () => {
 
           {/* COPYRIGHT */}
 
-          <div className="mt-10 border-t border-white/10 pt-6 text-center">
+          <div className="mt-14 border-t border-white/10 pt-7 text-center">
             <p className="text-xs text-gray-500">
               © {new Date().getFullYear()} EB. All rights reserved.
+            </p>
+
+            <p className="mt-2 text-xs text-gray-600">
+              Connecting Opportunities. Creating Impact.
             </p>
           </div>
         </div>
