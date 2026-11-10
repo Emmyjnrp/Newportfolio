@@ -132,7 +132,7 @@ const Expertise = () => {
 
           <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-400">
             Let's explore how strategic business development, sales execution,
-            and meaningful partnerships can help move your business forward.
+            and meaningful execution can help move your business forward.
           </p>
 
           <Link

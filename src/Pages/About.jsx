@@ -533,6 +533,19 @@ const About = () => {
                   </p>
                 </div>
               </div>
+              <div className="border-l-2 border-purple-500 pl-5">
+                <p className="text-xs font-semibold text-purple-600">
+                  SEPTEMBER 2026
+                </p>
+
+                <h4 className="mt-3 font-bold text-gray-900">
+                  Bachelor in Business Administration (BBA)
+                </h4>
+
+                <p className="mt-2 text-sm text-gray-500">
+                  University of the people, California, United States
+                </p>
+              </div>
 
               <div className="border-l-2 border-purple-500 pl-5">
                 <p className="text-xs font-semibold text-purple-600">

@@ -73,9 +73,9 @@ function Experience() {
     {
       period: "MAY 2025 — PRESENT",
       role: "Founding Senior Business Development Manager",
-      company: "Growth-Stage Technology Company",
+      company: "camtalk solutions",
       employment: "",
-      location: "Remote",
+      location: "Florida, United States (Remote)",
       number: "03",
       responsibilities: [
         "Spearheaded end-to-end business development operations from the ground up, defining the go-to-market strategy, prospecting framework and partnership pipeline.",
