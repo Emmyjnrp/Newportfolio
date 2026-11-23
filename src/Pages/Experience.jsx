@@ -23,7 +23,7 @@ function Experience() {
     {
       number: "$200K+",
       label: "Revenue Generated",
-      detail: "camtalk solutions",
+      detail: "Camtalk solutions",
       icon: Target,
     },
     {
