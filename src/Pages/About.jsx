@@ -413,7 +413,7 @@ const About = () => {
 
             <div className="mt-10 space-y-7">
               {[
-                ["Location", "Nigeria"],
+                ["Location", "Based in west Africa, serving global clients"],
                 ["Experience", "Business Development & Sales"],
                 [
                   "Focus Areas",
